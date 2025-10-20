@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: codefresh-demo-app
+  labels:
+    app: codefresh-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: codefresh-demo
+  template:
+    metadata:
+      labels:
+        app: codefresh-demo
+    spec:
+      containers:
+      - name: demo-app-container
+        image: 430118849990.dkr.ecr.us-east-1.amazonaws.com/codefresh-demo-app:latest 
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DEMO_ENV_VAR
+          value: "Valor desde Kubernetes (GitOps)" 
