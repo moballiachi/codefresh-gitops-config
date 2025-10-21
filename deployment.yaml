@@ -5,7 +5,7 @@ metadata:
   labels:
     app: codefresh-demo
   annotations: 
-    kubernetes.io/change-force-restart: "2025-10-20-v1"
+    kubernetes.io/change-force-restart: "2025-10-20-v2"
 spec:
   replicas: 1
   selector:
